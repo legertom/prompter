@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @prompt %>
 
-<div>
-  <%= link_to "Edit this prompt", edit_prompt_path(@prompt) %> |
-  <%= link_to "Back to prompts", prompts_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+    <p style="color: green"><%= notice %></p>
+      <div class="mt-4">
+        <h1><%= @prompt.title %></h1>
+        <p><span style="color: gray; font-style: italic;"><%= @prompt.description %></span></p>
+        <p><%= simple_format(@prompt.prompt_text) %></p>
+      </div>
 
-  <%= button_to "Destroy this prompt", @prompt, method: :delete %>
+      <%= link_to 'Edit', edit_prompt_path(@prompt), class: 'btn btn-secondary' %> |
+      <%= link_to 'Back', prompts_path, class: 'btn btn-link' %>
+    </div>
+  </div>
 </div>

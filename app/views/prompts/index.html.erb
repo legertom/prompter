@@ -2,22 +2,23 @@
 
 <div class="container">
   <div class="row">
-    <% @prompts.each do |prompt| %>
-      <div class="col-md-4">
+  <% @prompts.each do |prompt| %>
+    <div class="row"> 
+      <div class="col-md-8 mx-auto"> <!-- Update this line -->
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title"><%= prompt.title %></h5>
-            <p class="card-text"><small><%= prompt.description %></small></p>
-            <p class="card-text"><%= prompt.prompt_text %></p>
-            <div class="d-flex justify-content-between">
-              <%= link_to 'Show', prompt, class: 'btn btn-primary' %>
-              <%= link_to 'Edit', edit_prompt_path(prompt), class: 'btn btn-secondary' %>
-              <%= link_to 'Delete', prompt, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-            </div>
+            <p class="card-text"><%= prompt.description %></p>
+            <p class="card-text"><%= simple_format(prompt.prompt_text) %></p>
+            <%= link_to 'Show', prompt, class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_prompt_path(prompt), class: 'btn btn-secondary' %>
+            <%= link_to 'Delete', prompt, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
           </div>
         </div>
       </div>
-    <% end %>
+    </div> 
+  <% end %>
+  
   </div>
 
   <div class="d-flex justify-content-center">

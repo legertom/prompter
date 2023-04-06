@@ -1,32 +1,32 @@
-<%= form_with(model: prompt) do |form| %>
+<%= form_with(model: prompt, local: true, html: { class: 'prompt-form' }) do |form| %>
   <% if prompt.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(prompt.errors.count, "error") %> prohibited this prompt from being saved:</h2>
 
       <ul>
-        <% prompt.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% prompt.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="form-group mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :prompt_text, style: "display: block" %>
-    <%= form.text_area :prompt_text %>
+  <div class="form-group mb-3">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="form-group mb-3">
+    <%= form.label :prompt_text, class: 'form-label' %>
+    <%= form.text_area :prompt_text, class: 'form-control', rows: 10 %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
