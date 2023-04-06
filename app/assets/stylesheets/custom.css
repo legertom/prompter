@@ -1,0 +1,18 @@
+/* Google Fonts */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  
+  /* Colors */
+  :root {
+    --color1: #026670;
+    --color2: #9fedd7;
+    --color3: #fef9c7;
+    --color4: #fce181;
+    --color5: #edeAe5;
+  }
+  
+  body {
+    background-color: var(--color5);
+  }
+  

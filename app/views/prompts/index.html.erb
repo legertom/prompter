@@ -1,14 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Prompts</h1>
+<div class="container">
+  <div class="row">
+    <% @prompts.each do |prompt| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= prompt.title %></h5>
+            <p class="card-text"><small><%= prompt.description %></small></p>
+            <p class="card-text"><%= prompt.prompt_text %></p>
+            <div class="d-flex justify-content-between">
+              <%= link_to 'Show', prompt, class: 'btn btn-primary' %>
+              <%= link_to 'Edit', edit_prompt_path(prompt), class: 'btn btn-secondary' %>
+              <%= link_to 'Delete', prompt, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<div id="prompts">
-  <% @prompts.each do |prompt| %>
-    <%= render prompt %>
-    <p>
-      <%= link_to "Show this prompt", prompt %>
-    </p>
-  <% end %>
+  <div class="d-flex justify-content-center">
+    <%= link_to 'New Prompt', new_prompt_path, class: 'btn btn-primary mt-3' %>
+  </div>
 </div>
-
-<%= link_to "New prompt", new_prompt_path %>
