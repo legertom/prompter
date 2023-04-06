@@ -6,6 +6,6 @@ services:
     startCommand: "bundle exec rails server -p $PORT -e production"
     envVars:
       - key: DATABASE_URL
-        value: ostgres://prompt_job_board_user:RCk9kQ6iObXG1mtwMk7G2RYGhLW88sxU@dpg-cgmvi97dvk4k01720ai0-a/prompt_job_board
+        value: postgres://prompt_job_board_user:RCk9kQ6iObXG1mtwMk7G2RYGhLW88sxU@dpg-cgmvi97dvk4k01720ai0-a/prompt_job_board
       - key: SECRET_KEY_BASE
         value: 43708578fdcbf24bd9a12543290e92117cc71647e8e765feda5b195233766499497a700ae0c1e327d2a784d2c1317591a81f680070bcd239a76d54fdfad40461
