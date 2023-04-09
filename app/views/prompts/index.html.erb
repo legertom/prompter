@@ -11,8 +11,10 @@
             <p class="card-text"><%= prompt.description %></p>
             <p class="card-text"><%= simple_format(prompt.prompt_text) %></p>
             <%= link_to 'Show', prompt, class: 'btn btn-primary' %>
+            <% if user_signed_in? %>
             <%= link_to 'Edit', edit_prompt_path(prompt), class: 'btn btn-secondary' %>
             <%= link_to 'Delete', prompt, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
           </div>
         </div>
       </div>
