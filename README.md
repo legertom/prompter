@@ -1,5 +1,5 @@
 # Promptitude
-Promptitude is a job board for posting and finding jobs related to writing prompts for AI. It is built using Ruby 3.1.0 and Rails 7, and is open-source for others to contribute to.
+Promptitude is a list of prompts and materials related to writing prompts for AI. It is built using Ruby 3.1.0 and Rails 7, and is open-source for others to contribute to.
 
 ## Installation
 To install and run Promptitude locally, follow these steps:
@@ -17,13 +17,14 @@ Users can view and post jobs related to writing prompts for AI on Promptitude. J
 To post a job, users must create an account and log in. From there, they can create a new job posting with a title, description, category, job type, location, and salary. Once the job is posted, it will be visible to other users.
 
 ## Accessing the Prompts API
-Promptititude uses ```active_model_serializers``` to make the prompts accessible to all users via API. 
+Promptitude uses ```active_model_serializers``` to make the prompts accessible to all users via API. 
 
 To access the Prompts API, use the following endpoints:
 
 ```GET https://promptitude.org/api/v1/prompts```: Returns a list of all prompts.
+
 ```GET https://promptitude.org/api/v1/prompts/:id```: Returns a specific prompt by ID.
-Replace promptitude.org with the domain where your Rails application is hosted.
+
 
 ### Example Usage with JavaScript
 To use the Prompts API in a JavaScript project, you can use the Fetch API. Here's an example of how to fetch all prompts and log the response data:
