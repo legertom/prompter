@@ -1,0 +1,9 @@
+<div class="comments">
+  <h4>Comments (<%= prompt.comments.count %>)</h4>
+  <% prompt.comments.each do |comment| %>
+    <div class="comment">
+      <p><strong><%= comment.user.email %></strong> commented:</p>
+      <p><%= simple_format(comment.content) %></p>
+    </div>
+  <% end %>
+</div>

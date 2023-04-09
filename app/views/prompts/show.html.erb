@@ -12,6 +12,10 @@
 
       <%= link_to 'Edit', edit_prompt_path(@prompt), class: 'btn btn-secondary' %> |
       <%= link_to 'Back', prompts_path, class: 'btn btn-link' %>
+      <%= render 'comments/form', prompt: @prompt %>
+      <%= render 'comments/comments', prompt: @prompt %>
+
     </div>
+    
   </div>
 </div>
