@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xM6v1XmRo7M" crossorigin="anonymous">
 
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -28,26 +29,19 @@
         <%= link_to 'About', about_path, class: 'nav-link' %>
       </li>
       <% if user_signed_in? %>
-  <%= form_with url: destroy_user_session_path, method: :delete do |form| %>
-   <li> <%= form.submit 'Sign out', class: 'btn btn-link' %></li>
-  <% end %>
-<% else %>
- <li> <%= link_to "Sign in", new_user_session_path %></li>
- <li> <%= link_to "Register", new_user_registration_path %></li>
-<% end %>
+      <%= form_with url: destroy_user_session_path, method: :delete, class: 'signout-form' do |form| %>
+        <li class="nav-item"><%= form.submit 'Sign out', class: 'btn nav-link' %></li>
+      <% end %>
+    <% else %>
+      <li class="nav-item"> <%= link_to "Sign in", new_user_session_path, class: 'nav-link' %></li>
+      <li class="nav-item"> <%= link_to "Register", new_user_registration_path, class: 'nav-link' %></li>
+    <% end %>
       </ul>
 
-      
-
-
-    
-
-    
     </div>
   </div>
 </nav>
-<p class="notice"Notice: <%= notice %></p>
-<p class="alert">Alert: <%= alert %></p>
+
 
     <%= yield %>
   </body>
