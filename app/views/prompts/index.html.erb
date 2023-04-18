@@ -1,6 +1,15 @@
-<p style="color: green"><%= notice %></p>
+
 
 <div class="container">
+<p style="color: green"><%= notice %></p>
+  <h1 class="my-4">Prompts</h1>
+
+                <% if user_signed_in? %>
+
+<%= link_to 'New Prompt', new_prompt_path, class: 'btn btn-primary' %>
+
+<% end %>
+
   <div class="row">
   <% @prompts.each do |prompt| %>
     <div class="row"> 
