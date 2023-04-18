@@ -1,0 +1,30 @@
+<div class="container">
+<h1 class="my-4">
+Resource Categories</h1>
+<div class="mb-3">
+<%= link_to 'New Resource Category', new_resource_category_path, class: 'btn btn-primary' %>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resource_categories.each do |resource_category| %>
+        <tr>
+          <td><%= resource_category.id %></td>
+          <td><%= resource_category.name %></td>
+          <td>
+            <%= link_to 'Show', resource_category, class: 'btn btn-info btn-sm' %>
+            <%= link_to 'Edit', edit_resource_category_path(resource_category), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Delete', resource_category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,22 @@
+<%= form_with(model: resource_category, local: true) do |form| %>
+    <% if resource_category.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(resource_category.errors.count, "error") %> prohibited this resource category from being saved:</h4>
+        <ul>
+          <% resource_category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="form-group">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  
+    <div class="form-group">
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+  

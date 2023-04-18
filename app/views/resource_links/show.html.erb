@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="mb-4"><%= @resource_link.title %></h1>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Link:</strong> <%= link_to @resource_link.url, @resource_link.url, target: '_blank', rel: 'noopener' %></p>
+      <p><strong>Description:</strong> <%= @resource_link.description %></p>
+      <p><strong>Category:</strong> <%= @resource_link.resource_category.name %></p>
+    </div>
+    <div class="col-md-6">
+      <%= image_tag @resource_link.image_url, alt: @resource_link.title, class: 'img-fluid' %>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to 'Edit', edit_resource_link_path(@resource_link), class: 'btn btn-primary mr-2' %>
+    <%= link_to 'Back to Resource Links', resource_links_path, class: 'btn btn-secondary mr-2' %>
+    <%= button_to 'Delete', @resource_link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  </div>
+</div>

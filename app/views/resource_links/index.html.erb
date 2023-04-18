@@ -1,13 +1,15 @@
-<h1>Resource Links</h1>
+<div class="container">
 
-<table>
+<h1 class="mb-4">Resource Links</h1>
+<%= link_to 'New Resource Link', new_resource_link_path, class: 'btn btn-primary' %>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
       <th>Link</th>
       <th>Description</th>
-      <th>Category</th>
       <th>Image</th>
+      <th>Category</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -15,18 +17,19 @@
     <% @resource_links.each do |resource_link| %>
       <tr>
         <td><%= resource_link.title %></td>
-        <td><%= link_to resource_link.link, resource_link.link, target: "_blank" %></td>
+        <td><%= link_to resource_link.url, resource_link.url, target: "_blank" %></td>
         <td><%= resource_link.description %></td>
+        <td><%= image_tag(resource_link.image_url, class: "img-thumbnail", style: "width: 100px;") if resource_link.image_url.present? %></td>
         <td><%= resource_link.resource_category.name %></td>
-        <td><%= image_tag resource_link.image_url if resource_link.image_url.present? %></td>
         <td>
-          <%= link_to 'Show', resource_link_path(resource_link) %> |
-          <%= link_to 'Edit', edit_resource_link_path(resource_link) %> |
-          <%= link_to 'Delete', resource_link_path(resource_link), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_resource_link_path(resource_link), class: 'btn btn-sm btn-warning' %> |
+          <%= link_to 'Delete', resource_link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'New Resource Link', new_resource_link_path %>
+
+
+</div>
