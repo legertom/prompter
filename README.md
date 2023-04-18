@@ -1,22 +1,28 @@
 # Promptitude
 Promptitude is a list of prompts and materials related to writing prompts for AI. It is built using Ruby 3.1.0 and Rails 7, and is open-source for others to contribute to.
 
+## Table of Contents
+- [Promptitude](#promptitude)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Accessing the Prompts API](#accessing-the-prompts-api)
+  - [Example Usage with JavaScript](#example-usage-with-javascript)
+- [Future Versions](#future-versions)
+- [Contributing](#contributing)
+
+
 ## Installation
 To install and run Promptitude locally, follow these steps:
 
-### Clone the repository.
-- Install the required gems using bundle install.
-- Set up the database using rails db:create and rails db:migrate.
-- Start the server using rails server.
-- Open localhost:3000 in your browser.
+- Clone the repository.
+- Install the required gems using `bundle install`.
+- Set up the database using `rails db:create` and `rails db:migrate`.
+- Start the server using `rails server`.
+- Open `localhost:3000` in your browser.
 
 ## Usage
 
-Users can view and post jobs related to writing prompts for AI on Promptitude. Jobs can be filtered by category, location, and job type. Users can also create an account to save jobs and receive notifications about new job postings.
-
-To post a job, users must create an account and log in. From there, they can create a new job posting with a title, description, category, job type, location, and salary. Once the job is posted, it will be visible to other users.
-
-## Accessing the Prompts API
+### Accessing the Prompts API
 Promptitude uses ```active_model_serializers``` to make the prompts accessible to all users via API. 
 
 To access the Prompts API, use the following endpoints:
@@ -47,12 +53,13 @@ fetch(`https://promptitude.org/api/v1/prompts/${promptId}`)
 ```
 
 ## Future Versions
-Promptitude is a growing project, and future versions will include the following features:
+In future versions of Promptitude, we plan to:
 
-- Apply for jobs directly through the website.
-- Integration with popular AI platforms to make it easier for job seekers to find relevant jobs.
-- A better recommendation system for job seekers based on their preferences and past applications.
-- A messaging system to allow job seekers and employers to communicate directly on the website.
+- Expand the collection of prompts and resources.
+- Add user authentication and the ability for users to save their favorite prompts.
+- Implement a search feature to help users find prompts based on keywords or categories.
+- Improve the API by adding pagination and filtering options.
+- Enhance the website's user interface and overall user experience.
 
 ## Contributing
 We welcome contributions to Promptitude! If you have a feature you'd like to add or a bug to fix, please create a pull request. If you have any questions or suggestions, feel free to open an issue on the repository.
