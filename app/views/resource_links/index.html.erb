@@ -1,0 +1,32 @@
+<h1>Resource Links</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resource_links.each do |resource_link| %>
+      <tr>
+        <td><%= resource_link.title %></td>
+        <td><%= link_to resource_link.link, resource_link.link, target: "_blank" %></td>
+        <td><%= resource_link.description %></td>
+        <td><%= resource_link.resource_category.name %></td>
+        <td><%= image_tag resource_link.image_url if resource_link.image_url.present? %></td>
+        <td>
+          <%= link_to 'Show', resource_link_path(resource_link) %> |
+          <%= link_to 'Edit', edit_resource_link_path(resource_link) %> |
+          <%= link_to 'Delete', resource_link_path(resource_link), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Resource Link', new_resource_link_path %>
