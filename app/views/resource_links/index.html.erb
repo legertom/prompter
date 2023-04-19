@@ -1,9 +1,11 @@
 <div class="container">
 
 <h1 class="mb-4">Resource Links</h1>
+<% if current_user%>
 <%= link_to 'New Resource Link', new_resource_link_path, class: 'btn btn-primary' %>
 <%= link_to 'New Resource Category', new_resource_category_path, class: 'btn btn-sm btn-outline-primary'  %>
 <%= link_to 'All Resource Categories', resource_categories_path, class: 'btn btn-sm btn-outline-primary' %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -12,7 +14,9 @@
       <th>Description</th>
       <th>Image</th>
       <th>Category</th>
+      <% if current_user %>
       <th>Actions</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -23,10 +27,12 @@
         <td><%= resource_link.description %></td>
         <td><%= image_tag(resource_link.image_url, class: "img-thumbnail", style: "width: 100px;") if resource_link.image_url.present? %></td>
         <td><%= resource_link.resource_category.name %></td>
+        <% if current_user%>
         <td>
           <%= link_to 'Edit', edit_resource_link_path(resource_link), class: 'btn btn-sm btn-warning' %> |
           <%= link_to 'Delete', resource_link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
         </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
