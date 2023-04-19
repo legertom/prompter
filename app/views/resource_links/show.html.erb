@@ -17,4 +17,6 @@
     <%= link_to 'Back to Resource Links', resource_links_path, class: 'btn btn-secondary mr-2' %>
     <%= button_to 'Delete', @resource_link, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
   </div>
+  <%= render 'comments/form', commentable: @resource_link %>
+      <%= render 'comments/comments', commentable: @resource_link %>
 </div>

@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= form_for([prompt, Comment.new]) do |f| %>
+   <%= form_for([commentable, Comment.new]) do |f| %>
     <div class="form-group">
       <%= f.label :content, "Add a comment" %>
       <%= f.text_area :content, class: 'form-control' %>
