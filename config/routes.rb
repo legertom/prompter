@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :prompts do
     resources :comments, only: [:create, :destroy]
   end
-  resources :resource_links
+  resources :resource_links do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :resource_categories
   root 'prompts#index'
   get 'about', to: 'pages#about'
